@@ -28,72 +28,68 @@ import org.apache.commons.lang3.*;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        DesktopPane1 = new javax.swing.JDesktopPane();
+        MenuBar = new javax.swing.JMenuBar();
+        Menu1 = new javax.swing.JMenu();
+        MenuItemConnect = new javax.swing.JMenuItem();
+        Separator = new javax.swing.JPopupMenu.Separator();
+        MenuItemExit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Gnome-Network-Idle-32.png"))); // NOI18N
-        jMenu1.setText("File");
+        Menu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Gnome-Network-Idle-32.png"))); // NOI18N
+        Menu1.setText("Menu");
 
-        jMenuItem1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Gnome-Preferences-System-Network-32.png"))); // NOI18N
-        jMenuItem1.setText("Connect");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        MenuItemConnect.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        MenuItemConnect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Gnome-Preferences-System-Network-32.png"))); // NOI18N
+        MenuItemConnect.setText("Connect");
+        MenuItemConnect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                MenuItemConnectActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
-        jMenu1.add(jSeparator1);
+        Menu1.add(MenuItemConnect);
+        Menu1.add(Separator);
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Gnome-Process-Stop-32.png"))); // NOI18N
-        jMenuItem2.setText("Exit");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        MenuItemExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Gnome-Process-Stop-32.png"))); // NOI18N
+        MenuItemExit.setText("Exit");
+        MenuItemExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                MenuItemExitActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        Menu1.add(MenuItemExit);
 
-        jMenuBar1.add(jMenu1);
+        MenuBar.add(Menu1);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addComponent(DesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
+            .addComponent(DesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void MenuItemConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemConnectActionPerformed
         // TODO add your handling code here:
         LoginGui login = new LoginGui();
-        jDesktopPane1.add(login);
+        DesktopPane1.add(login);
         login.show();
                 
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_MenuItemConnectActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void MenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemExitActionPerformed
         // TODO add your handling code here:
         System.exit(0); 
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_MenuItemExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,12 +133,11 @@ import org.apache.commons.lang3.*;
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JDesktopPane DesktopPane1;
+    private javax.swing.JMenu Menu1;
+    private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JMenuItem MenuItemConnect;
+    private javax.swing.JMenuItem MenuItemExit;
+    private javax.swing.JPopupMenu.Separator Separator;
     // End of variables declaration//GEN-END:variables
 }
