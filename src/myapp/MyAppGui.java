@@ -6,9 +6,7 @@
 package myapp;
 /**
  *
- * @author Adam
- */
-import org.apache.commons.lang3.*; 
+ * @author Adam */
 
         public class MyAppGui extends javax.swing.JFrame {
 
@@ -29,6 +27,8 @@ import org.apache.commons.lang3.*;
     private void initComponents() {
 
         DesktopPane1 = new javax.swing.JDesktopPane();
+        InternalFrameLogin = new javax.swing.JInternalFrame();
+        jButton1 = new javax.swing.JButton();
         MenuBar = new javax.swing.JMenuBar();
         Menu1 = new javax.swing.JMenu();
         MenuItemConnect = new javax.swing.JMenuItem();
@@ -36,6 +36,30 @@ import org.apache.commons.lang3.*;
         MenuItemExit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        InternalFrameLogin.setVisible(false);
+
+        jButton1.setText("jButton1");
+
+        javax.swing.GroupLayout InternalFrameLoginLayout = new javax.swing.GroupLayout(InternalFrameLogin.getContentPane());
+        InternalFrameLogin.getContentPane().setLayout(InternalFrameLoginLayout);
+        InternalFrameLoginLayout.setHorizontalGroup(
+            InternalFrameLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InternalFrameLoginLayout.createSequentialGroup()
+                .addContainerGap(251, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
+        );
+        InternalFrameLoginLayout.setVerticalGroup(
+            InternalFrameLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InternalFrameLoginLayout.createSequentialGroup()
+                .addContainerGap(147, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
+        );
+
+        InternalFrameLogin.setBounds(230, 70, 350, 210);
+        DesktopPane1.add(InternalFrameLogin, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Menu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Gnome-Network-Idle-32.png"))); // NOI18N
         Menu1.setText("Menu");
@@ -79,11 +103,9 @@ import org.apache.commons.lang3.*;
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuItemConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemConnectActionPerformed
-        // TODO add your handling code here:
-        LoginGui login = new LoginGui();
-        DesktopPane1.add(login);
-        login.show();
-                
+    InternalFrameLogin.setVisible(true);
+        
+        // TODO add your handling code here:                  
     }//GEN-LAST:event_MenuItemConnectActionPerformed
 
     private void MenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemExitActionPerformed
@@ -134,10 +156,12 @@ import org.apache.commons.lang3.*;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane DesktopPane1;
+    private javax.swing.JInternalFrame InternalFrameLogin;
     private javax.swing.JMenu Menu1;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenuItem MenuItemConnect;
     private javax.swing.JMenuItem MenuItemExit;
     private javax.swing.JPopupMenu.Separator Separator;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
