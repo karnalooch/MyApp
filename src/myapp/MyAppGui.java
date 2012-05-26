@@ -4,6 +4,9 @@
  */
 
 package myapp;
+
+import org.apache.commons.net.ftp.FTPClient;
+
 /**
  *
  * @author Adam */
@@ -28,7 +31,8 @@ package myapp;
 
         DesktopPane1 = new javax.swing.JDesktopPane();
         InternalFrameLogin = new javax.swing.JInternalFrame();
-        jButton1 = new javax.swing.JButton();
+        ButtonCancel = new javax.swing.JButton();
+        TextFieldFtpAddress = new javax.swing.JTextField();
         MenuBar = new javax.swing.JMenuBar();
         Menu1 = new javax.swing.JMenu();
         MenuItemConnect = new javax.swing.JMenuItem();
@@ -39,22 +43,32 @@ package myapp;
 
         InternalFrameLogin.setVisible(false);
 
-        jButton1.setText("jButton1");
+        ButtonCancel.setText("Cancel");
+
+        TextFieldFtpAddress.setText("ftp://");
 
         javax.swing.GroupLayout InternalFrameLoginLayout = new javax.swing.GroupLayout(InternalFrameLogin.getContentPane());
         InternalFrameLogin.getContentPane().setLayout(InternalFrameLoginLayout);
         InternalFrameLoginLayout.setHorizontalGroup(
             InternalFrameLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InternalFrameLoginLayout.createSequentialGroup()
-                .addContainerGap(251, Short.MAX_VALUE)
-                .addComponent(jButton1)
+            .addGroup(InternalFrameLoginLayout.createSequentialGroup()
+                .addGroup(InternalFrameLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InternalFrameLoginLayout.createSequentialGroup()
+                        .addContainerGap(259, Short.MAX_VALUE)
+                        .addComponent(ButtonCancel))
+                    .addGroup(InternalFrameLoginLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(TextFieldFtpAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         InternalFrameLoginLayout.setVerticalGroup(
             InternalFrameLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InternalFrameLoginLayout.createSequentialGroup()
-                .addContainerGap(147, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addGap(27, 27, 27)
+                .addComponent(TextFieldFtpAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addComponent(ButtonCancel)
                 .addContainerGap())
         );
 
@@ -112,7 +126,14 @@ package myapp;
         // TODO add your handling code here:
         System.exit(0); 
     }//GEN-LAST:event_MenuItemExitActionPerformed
-
+    protected boolean ConnectToFtp(){
+        FTPClient ftp = new FTPClient();
+        try{
+            ftp.connect(TextFieldFtpAddress.getText());
+        return true;}catch (Exception ex) {
+        return false;}
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -155,6 +176,7 @@ package myapp;
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonCancel;
     private javax.swing.JDesktopPane DesktopPane1;
     private javax.swing.JInternalFrame InternalFrameLogin;
     private javax.swing.JMenu Menu1;
@@ -162,6 +184,6 @@ package myapp;
     private javax.swing.JMenuItem MenuItemConnect;
     private javax.swing.JMenuItem MenuItemExit;
     private javax.swing.JPopupMenu.Separator Separator;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField TextFieldFtpAddress;
     // End of variables declaration//GEN-END:variables
 }
